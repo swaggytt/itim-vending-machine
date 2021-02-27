@@ -7,11 +7,12 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Ku create laew na i sus
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          // href="https://reactjs.org"
+          href="https://storage.thaipost.net/main/uploads/photos/big/20190412/image_big_5caff2dcf29fe.jpg"
           target="_blank"
           rel="noopener noreferrer"
         >
