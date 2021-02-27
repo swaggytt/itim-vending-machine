@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Ku create laew na i sus
+          Sawasdee TOC Itim
         </p>
         <a
           className="App-link"
