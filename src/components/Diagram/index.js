@@ -51,19 +51,36 @@ export default function Diagram() {
     { key: 6, text: "Cone/nVanilla", color: "lightgreen", loc: "600 100" },
     { key: 7, text: "Bread/nChocolate", color: "lightgreen", loc: "600 -100" },
     { key: 8, text: "Bread/nVanilla", color: "lightgreen", loc: "600 -250" },
-    { key: 9, text: "Cone/nStickyrice/nChocolate", color: "lightgreen", loc: "800 250" },
-    { key: 10, text: "Cone/nStickyrice/nVanilla", color: "lightgreen", loc: "800 100" },
-    { key: 11, text: "Bread/nStickyrice/nChocolate", color: "lightgreen", loc: "800 -100" },
-    { key: 12, text: "Bread/nStickyrice/nVanilla", color: "lightgreen", loc: "800 -250" },
-    { key: 13, text: "Confirm", color: "lightgreen", loc: "1000 0" }
-  ])
+    {
+      key: 9,
+      text: "Cone/nStickyrice/nChocolate",
+      color: "lightgreen",
+      loc: "800 250",
+    },
+    {
+      key: 10,
+      text: "Cone/nStickyrice/nVanilla",
+      color: "lightgreen",
+      loc: "800 100",
+    },
+    {
+      key: 11,
+      text: "Bread/nStickyrice/nChocolate",
+      color: "lightgreen",
+      loc: "800 -100",
+    },
+    {
+      key: 12,
+      text: "Bread/nStickyrice/nVanilla",
+      color: "lightgreen",
+      loc: "800 -250",
+    },
+    { key: 13, text: "Confirm", color: "lightgreen", loc: "1000 0" },
+  ]);
 
   const [linkData, setLinkData] = useState([
-    { key: -1, from: 0, to: 1 },
-    { key: -2, from: 0, to: 2 },
-    { key: -3, from: 1, to: 1 },
-    { key: -4, from: 2, to: 3 },
-    { key: -5, from: 3, to: 0 },
+    { key: -1, from: 0, to: 1, text: "Cone" },
+    { key: -2, from: 0, to: 2, text: "Bread" },
   ]);
 
   return (
@@ -72,19 +89,8 @@ export default function Diagram() {
       <ReactDiagram
         initDiagram={initDiagram}
         divClassName="diagram-component"
-        nodeDataArray={[
-          { key: 0, text: "Alpha", color: "lightblue", loc: "0 0" },
-          { key: 1, text: "Beta", color: "orange", loc: "150 0" },
-          { key: 2, text: "Gamma", color: "lightgreen", loc: "0 150" },
-          { key: 3, text: "Delta", color: "pink", loc: "150 150" },
-        ]}
-        linkDataArray={[
-          { key: -1, from: 0, to: 1 },
-          { key: -2, from: 0, to: 2 },
-          { key: -3, from: 1, to: 1 },
-          { key: -4, from: 2, to: 3 },
-          { key: -5, from: 3, to: 0 },
-        ]}
+        nodeDataArray={nodeData}
+        linkDataArray={linkData}
       ></ReactDiagram>
     </div>
   );
