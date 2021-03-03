@@ -20,20 +20,25 @@ export default function Diagram() {
     // define a simple Node template
     diagram.nodeTemplate = $(
       go.Node,
-      "Auto", // the Shape will go around the TextBlock
+      "Fix", // the Shape will go around the TextBlock
       new go.Binding("location", "loc", go.Point.parse).makeTwoWay(
         go.Point.stringify
       ),
       $(
         go.Shape,
         "Circle",
-        { name: "SHAPE", fill: "white", strokeWidth: 0 },
+        {
+          name: "SHAPE",
+          fill: "white",
+          width: 75,
+          strokeWidth: 0,
+        },
         // Shape.fill is bound to Node.data.color
         new go.Binding("fill", "color")
       ),
       $(
         go.TextBlock,
-        { margin: 8, editable: true }, // some room around the text
+        { margin: 8, editable: false, text: "textAlign: 'center'" }, // some room around the text
         new go.Binding("text").makeTwoWay()
       )
     );
