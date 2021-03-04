@@ -57,7 +57,7 @@ export default function Diagram() {
       {
         routing: go.Link.AvoidsNodes,
         adjusting: go.Link.End,
-        // curve: go.Link.JumpOver,
+        curve: go.Link.JumpOver,
         corner: 5,
         opacity: 1.0,
       },
@@ -107,11 +107,24 @@ export default function Diagram() {
   ]);
 
   const [linkData, setLinkData] = useState([
-    { key: -1, from: 0, to: 1, text: "Cone" },
-    { key: -2, from: 0, to: 2, text: "Bread" },
-    { key: -3, from: 1, to: 3, text: "stickyrice" },
-    { key: -4, from: 1, to: 5, text: "chocolate" },
-    { key: -3, from: 1, to: 6, text: "stickyrice" },
+    // From Start
+    { key: -1, from: 0, to: 0, text: " " },
+    { key: -2, from: 0, to: 1, text: "Cone" },
+    { key: -3, from: 0, to: 2, text: "Bread" },
+
+    // From Cone
+    { key: -4, from: 1, to: 1, text: " " },
+    { key: -5, from: 1, to: 2, text: "bread" },
+    { key: -6, from: 1, to: 3, text: "stickyrice" },
+    { key: -7, from: 1, to: 5, text: "chocolate" },
+    { key: -8, from: 1, to: 6, text: "vanilla" },
+
+    // From Bread
+    { key: -9, from: 2, to: 1, text: "cone" },
+    { key: -10, from: 2, to: 2, text: " " },
+    { key: -11, from: 2, to: 4, text: "stickyrice" },
+    { key: -12, from: 2, to: 7, text: "chocolate" },
+    { key: -13, from: 2, to: 8, text: "vanilla" },
   ]);
 
   return (
