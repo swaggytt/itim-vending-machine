@@ -62,8 +62,8 @@ export default function Diagram() {
         opacity: 1.0,
       },
       new go.Binding("opacity").ofModel(),
-      $(go.Shape),
-      $(go.Shape, { toArrow: "Standard" })
+      $(go.Shape), //Link path shape
+      $(go.Shape, { toArrow: "Standard" }) // Arrow head
     );
 
     return diagram;
