@@ -38,9 +38,32 @@ export default function Diagram() {
       ),
       $(
         go.TextBlock,
-        { margin: 8, editable: false, text: "textAlign: 'center'" }, // some room around the text
+        {
+          margin: 8,
+          editable: false,
+          textAlign: "center",
+          wrap: go.TextBlock.WrapDesiredSize,
+        }, // some room around the text
         new go.Binding("text").makeTwoWay()
       )
+    );
+
+    diagram.linkTemplate = $(
+      go.Link,
+      {
+        relinkableFrom: true,
+        relinkableTo: true,
+      },
+      {
+        routing: go.Link.AvoidsNodes,
+        adjusting: go.Link.End,
+        // curve: go.Link.JumpOver,
+        corner: 5,
+        opacity: 1.0,
+      },
+      new go.Binding("opacity").ofModel(),
+      $(go.Shape),
+      $(go.Shape, { toArrow: "Standard" })
     );
 
     return diagram;
@@ -48,14 +71,14 @@ export default function Diagram() {
 
   const [nodeData, setNodeData] = useState([
     { key: 0, text: "Start", color: "lightgreen", loc: "0 0" },
-    { key: 1, text: "Cone", color: "lightgreen", loc: "200 100" },
-    { key: 2, text: "Bread", color: "lightgreen", loc: "200 -100" },
-    { key: 3, text: "Cone/nStickyrice", color: "lightgreen", loc: "400 100" },
-    { key: 4, text: "Bread/nStickyrice", color: "lightgreen", loc: "400 -100" },
-    { key: 5, text: "Cone/nChocolate", color: "lightgreen", loc: "600 250" },
-    { key: 6, text: "Cone/nVanilla", color: "lightgreen", loc: "600 100" },
-    { key: 7, text: "Bread/nChocolate", color: "lightgreen", loc: "600 -100" },
-    { key: 8, text: "Bread/nVanilla", color: "lightgreen", loc: "600 -250" },
+    { key: 1, text: "Cone", color: "lightgreen", loc: "200 -100" },
+    { key: 2, text: "Bread", color: "lightgreen", loc: "200 100" },
+    { key: 3, text: "Cone/nStickyrice", color: "lightgreen", loc: "400 -100" },
+    { key: 4, text: "Bread/nStickyrice", color: "lightgreen", loc: "400 100" },
+    { key: 5, text: "Cone/nChocolate", color: "lightgreen", loc: "600 -250" },
+    { key: 6, text: "Cone/nVanilla", color: "lightgreen", loc: "600 -100" },
+    { key: 7, text: "Bread/nChocolate", color: "lightgreen", loc: "600 100" },
+    { key: 8, text: "Bread/nVanilla", color: "lightgreen", loc: "600 250" },
     {
       key: 9,
       text: "Cone/nStickyrice/nChocolate",
@@ -86,6 +109,9 @@ export default function Diagram() {
   const [linkData, setLinkData] = useState([
     { key: -1, from: 0, to: 1, text: "Cone" },
     { key: -2, from: 0, to: 2, text: "Bread" },
+    { key: -3, from: 1, to: 3, text: "stickyrice" },
+    { key: -4, from: 1, to: 5, text: "chocolate" },
+    { key: -3, from: 1, to: 6, text: "stickyrice" },
   ]);
 
   return (
