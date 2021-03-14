@@ -1,12 +1,11 @@
 import Diagram from "../components/Diagram";
 import "./home.css";
+import Information from "../components/Information"
 
 export default function Home() {
   return (
-    <div className="container">
-      <div className="state-diagram">
-        <Diagram />
-      </div>
+    <div>
+        <Information/>
     </div>
   );
 }
