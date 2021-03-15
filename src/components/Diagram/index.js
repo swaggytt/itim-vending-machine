@@ -161,7 +161,6 @@ export default function Diagram() {
 
   return (
     <div>
-      <h1>Home</h1>
       <ReactDiagram
         initDiagram={initDiagram}
         divClassName="diagram-component"
