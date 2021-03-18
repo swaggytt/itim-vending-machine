@@ -17,6 +17,9 @@ summary{
     outline: none;
     
 }
+img{
+    width: 150px;
+}
 
 details[open] summary ~ * {
     animation:sweep .5s ease-in-out;

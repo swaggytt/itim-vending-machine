@@ -1,12 +1,13 @@
 import React from 'react'
 import './logoNavbar.css'
+import icecreame from "../../img/icecreame.png"
 
 const LogoNavbar = () => {
 
     return (
         <div class="logo">
             <div>
-                <img src="logoImage/icecream.png">
+                <img src={icecreame}>
                 </img>
             </div>
             <div class="member">
