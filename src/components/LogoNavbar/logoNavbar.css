@@ -1,0 +1,36 @@
+.logo{
+    
+    padding: 20px;
+    display: flex;
+}
+
+.member{
+  
+    padding: 20px;
+}
+
+summary{
+    padding: 1em;
+   
+    margin-bottom: 1em;
+    cursor: pointer;
+    outline: none;
+    
+}
+
+details[open] summary ~ * {
+    animation:sweep .5s ease-in-out;
+}
+
+@keyframes sweep{
+    from{
+        opacity: 0; margin-top: -10px;
+    }
+    to{
+        opacity: 1; margin-top: 0px;
+    }
+}
+
+ul{
+    list-style: none;
+}
