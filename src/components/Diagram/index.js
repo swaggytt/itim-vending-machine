@@ -22,7 +22,7 @@ export default function Diagram() {
       }),
       allowCopy: false,
       allowDelete: false,
-      allowSelect: false,
+      // allowSelect: false,
       allowLink: false,
     });
     // define a simple Node template
@@ -76,7 +76,6 @@ export default function Diagram() {
       new go.Binding("points").makeTwoWay(),
       $(go.Shape), //Link path shape
       $(go.Shape, { toArrow: "Standard" }) // Arrow head
-      // $(go.TextBlock,new go.Binding("text", "text"))
     );
 
     diagram.nodeTemplateMap.add(
@@ -92,18 +91,12 @@ export default function Diagram() {
           fill: "#52ce60" /* green */,
           stroke: null,
           portId: "",
-          // fromLinkable: true,
-          // fromLinkableSelfNode: true,
-          // fromLinkableDuplicates: true,
-          // toLinkable: true,
-          // toLinkableSelfNode: true,
-          // toLinkableDuplicates: true,
           cursor: "pointer",
         }),
         $(go.TextBlock, "Start", {
           font: "bold 16pt helvetica, bold arial, sans-serif",
           stroke: "whitesmoke",
-        })
+        }),
       )
     );
 
@@ -120,12 +113,6 @@ export default function Diagram() {
           fill: "#17b794",
           stroke: null,
           portId: "",
-          // fromLinkable: true,
-          // fromLinkableSelfNode: true,
-          // fromLinkableDuplicates: true,
-          // toLinkable: true,
-          // toLinkableSelfNode: true,
-          // toLinkableDuplicates: true,
           cursor: "pointer",
         }),
         $(go.Shape, "Circle", {
@@ -145,19 +132,9 @@ export default function Diagram() {
         )
       )
     );
-
+    diagram.isReadOnly = true;
     return diagram;
   }
-
-  // const nodeData = [
-  //   { key: 0, text: "Cone", loc: "200 -100", color: "lightgreen" },
-  //   { key: 1, text: "Bread", loc: "200 100", color: "lightgreen" },
-  // ];
-
-  // const linkData = [
-  //   { key: -1, from: 0, to: 1,points:[220,-80,220,100] },
-  //   { key: -2, from: 1, to: 0 },
-  // ];
 
   return (
     <div>
