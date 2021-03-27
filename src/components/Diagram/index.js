@@ -40,7 +40,7 @@ export default function Diagram() {
         "Circle",
         {
           name: "SHAPE",
-          fill: "white",
+          fill: "#c0c0c0",
           width: 90,
           strokeWidth: 0,
         },
@@ -50,6 +50,8 @@ export default function Diagram() {
       $(
         go.TextBlock,
         {
+          font: "10pt Itim",
+          stroke: "whitesmoke",
           margin: 0,
           editable: false,
           textAlign: "center",
@@ -74,8 +76,8 @@ export default function Diagram() {
       },
       new go.Binding("opacity").ofModel(),
       new go.Binding("points").makeTwoWay(),
-      $(go.Shape), //Link path shape
-      $(go.Shape, { toArrow: "Standard" }) // Arrow head
+      $(go.Shape, { strokeWidth: 2, stroke: "#c0c0c0" }), //Link path shape
+      $(go.Shape, { toArrow: "Standard", fill: "#c0c0c0", stroke: null}) // Arrow head
     );
 
     diagram.nodeTemplateMap.add(
@@ -88,13 +90,13 @@ export default function Diagram() {
           go.Point.stringify
         ),
         $(go.Shape, "Circle", {
-          fill: "#52ce60" /* green */,
+          fill: "#5490C2" /* green */,
           stroke: null,
           portId: "",
           cursor: "pointer",
         }),
         $(go.TextBlock, "Start", {
-          font: "bold 16pt helvetica, bold arial, sans-serif",
+          font: "bold 16pt Itim, bold arial, sans-serif",
           stroke: "whitesmoke",
         }),
       )
@@ -110,7 +112,7 @@ export default function Diagram() {
           go.Point.stringify
         ),
         $(go.Shape, "Circle", {
-          fill: "#17b794",
+          fill: "#30C386",
           stroke: null,
           portId: "",
           cursor: "pointer",
@@ -125,13 +127,42 @@ export default function Diagram() {
           go.TextBlock,
           "Confirm",
           {
-            font: "bold 13pt Quicksand, sans-serif",
+            font: "bold 13pt Itim, sans-serif",
             stroke: "whitesmoke",
           },
           new go.Binding("text").makeTwoWay()
         )
       )
     );
+
+    diagram.nodeTemplateMap.add(
+      "State",
+      $(
+        go.Node,
+        "Spot",
+        { desiredSize: new go.Size(90, 90) },
+        { locationSpot: go.Spot.Center },
+        new go.Binding("location", "loc", go.Point.parse).makeTwoWay(
+          go.Point.stringify
+        ),
+        $(go.Shape, "Circle", {
+          fill: "#FB5940",
+          stroke: null,
+          portId: "",
+          cursor: "pointer",
+        }),
+        $(
+          go.TextBlock,
+          {
+            font: "10pt itim, sans-serif",
+            stroke: "whitesmoke",
+            textAlign: "center",
+          },
+          new go.Binding("text").makeTwoWay()
+        )
+      )
+    );
+
     diagram.isReadOnly = true;
     return diagram;
   }
