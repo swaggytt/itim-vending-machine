@@ -1,7 +1,7 @@
 export const STATE_DATA = {
   nodeDataArray: [
     { key: 0, loc: "0 0", category: "Start" },
-    { key: 1, text: "Cone", loc: "200 -100", category: "State" },
+    { key: 1, text: "Cone", loc: "200 -100"},
     { key: 2, text: "Bread", loc: "200 100" },
     { key: 3, text: "Cone\nStickyrice", loc: "400 -100" },
     { key: 4, text: "Bread\nStickyrice", loc: "400 100" },
@@ -17,9 +17,9 @@ export const STATE_DATA = {
   ],
   linkDataArray: [
     // From Start
-    { key: -1, from: 0, to: 0, text: " " , points: [85, 60, 105, 60, 105, 95, 75, 95, 75, 75] },
-    { key: -2, from: 0, to: 1, text: "Cone" , points: [85, 30, 122.5, 30, 122.5, -100, 155, -100] },
-    { key: -3, from: 0, to: 2, text: "Bread" },
+    { key: -1, from: 0, to: 0, text: " " , points: [85, 60, 105, 60, 105, 95, 75, 95, 75, 75], category: "State" },
+    { key: -2, from: 0, to: 1, text: "Cone" , points: [85, 30, 122.5, 30, 122.5, -100, 155, -100], category: "State" },
+    { key: -3, from: 0, to: 2, text: "Bread", category: "State" },
 
     // From Cone
     { key: -4, from: 1, to: 1, text: " ", points: [240, -85, 260, -85, 260, -50, 230, -50, 230, -70] },
@@ -106,11 +106,11 @@ export const STATE_DATA = {
     { key: -65, from: 11, to: 13, text: "confirm", points: [840, 110, 1035, 110, 1035, 87] },
 
     //From Bread/Stickyrice/Vanilla
-    { key: -66, from: 12, to: 4, text: "vanilla" , points: [800, 295, 800, 315, 380, 315, 380, 140]},
-    { key: -67, from: 12, to: 8, text: "stickyrice", points: [757, 260, 643,260] },
-    { key: -68, from: 12, to: 10, text: "cone", points: [845, 250, 960, 250, 960, -95, 840, -95] },
-    { key: -69, from: 12, to: 11, text: "chocolate", points: [790, 207, 790, 143] },
-    { key: -70, from: 12, to: 12, text: "bread", points: [840, 265, 860, 265, 860, 300, 830, 300, 830, 280] },
-    { key: -71, from: 12, to: 13, text: "confirm", points: [845, 250, 1055, 250, 1055, 87] },
+    { key: -66, from: 12, to: 4, text: "vanilla" , points: [800, 295, 800, 315, 380, 315, 380, 140], category: "State" },
+    { key: -67, from: 12, to: 8, text: "stickyrice", points: [757, 260, 643,260], category: "State" },
+    { key: -68, from: 12, to: 10, text: "cone", points: [845, 250, 960, 250, 960, -95, 840, -95], category: "State" },
+    { key: -69, from: 12, to: 11, text: "chocolate", points: [790, 207, 790, 143], category: "State" },
+    { key: -70, from: 12, to: 12, text: "bread", points: [840, 265, 860, 265, 860, 300, 830, 300, 830, 280], category: "State" },
+    { key: -71, from: 12, to: 13, text: "confirm", points: [845, 250, 1055, 250, 1055, 87], category: "State" },
   ],
 };

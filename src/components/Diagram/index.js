@@ -40,7 +40,7 @@ export default function Diagram() {
         "Circle",
         {
           name: "SHAPE",
-          fill: "#c0c0c0",
+          fill: "#b0b0b0",
           width: 90,
           strokeWidth: 0,
         },
@@ -76,8 +76,8 @@ export default function Diagram() {
       },
       new go.Binding("opacity").ofModel(),
       new go.Binding("points").makeTwoWay(),
-      $(go.Shape, { strokeWidth: 2, stroke: "#c0c0c0" }), //Link path shape
-      $(go.Shape, { toArrow: "Standard", fill: "#c0c0c0", stroke: null}) // Arrow head
+      $(go.Shape, { strokeWidth: 2.5, stroke: "#c0c0c0" }), //Link path shape
+      $(go.Shape, { toArrow: "Standard", fill: "#c0c0c0", stroke: null }) // Arrow head
     );
 
     diagram.nodeTemplateMap.add(
@@ -98,7 +98,7 @@ export default function Diagram() {
         $(go.TextBlock, "Start", {
           font: "bold 16pt Itim, bold arial, sans-serif",
           stroke: "whitesmoke",
-        }),
+        })
       )
     );
 
@@ -160,6 +160,28 @@ export default function Diagram() {
           },
           new go.Binding("text").makeTwoWay()
         )
+      )
+    );
+
+    diagram.linkTemplateMap.add(
+      "State",
+      $(
+        go.Link,
+        {
+          relinkableFrom: false,
+          relinkableTo: false,
+        },
+        {
+          routing: go.Link.AvoidsNodes,
+          adjusting: go.Link.End,
+          curve: go.Link.JumpOver,
+          corner: 5,
+          opacity: 1.0,
+        },
+        new go.Binding("opacity").ofModel(),
+        new go.Binding("points").makeTwoWay(),
+        $(go.Shape, { strokeWidth: 2.5, stroke: "#606060" }), //Link path shape
+        $(go.Shape, { toArrow: "Standard", fill: "#606060", stroke: null }) // Arrow head
       )
     );
 
