@@ -1,0 +1,130 @@
+.twoChoicesInputButton {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  max-height: 100px;
+  margin: 10px 0px ;
+}
+.oneChoicesInputButton {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  max-height: 100px;
+  margin: 10px 0px ;
+}
+
+.groupedButton {
+  display: flex;
+  flex-direction: row;
+  flex: 50%;
+  justify-content: space-evenly;
+  /*align-items: center;*/
+}
+.header {
+  border-radius: 10px;
+  border: 3px solid white;
+  background-color: #F899A5;
+  color: white;
+  text-overflow: ellipsis;
+  flex: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+.halfChildButton {
+  border-radius: 10px;
+  background-color: #C4C4C4;
+  border: 3px solid white;
+  color: white;
+  text-overflow: ellipsis;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  flex: 50%;
+  flex-wrap: wrap;
+  height: 50px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+.halfChildButton:hover{
+    background-color:#2cdda9;
+}
+
+.halfChildButton:focus{
+    background-color:#2cdda9;
+    outline: none;
+}
+
+.fullChildButton {
+  border-radius: 10px;
+  background-color: #C4C4C4;
+  border: 3px solid white;
+  color: white;
+  text-overflow: ellipsis;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  flex: 100%;
+  flex-wrap: wrap;
+  height: 50px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+.fullChildButton:hover{
+  background-color:#2cdda9;
+}
+
+.fullChildButton:focus{
+  background-color:#2cdda9;
+  outline: none;
+}
+
+.confirmButton {
+  border-radius: 13px;
+  background-color: #5490C2;
+  border: 3px solid white;
+  color: white;
+  text-overflow: ellipsis;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 400px;
+  height: 50px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+.confirmButton:hover{
+  background-color:#477ba5;
+}
+
+.confirmButton:focus{
+  /*background-color:#477ba5;*/
+  outline: none;
+}
+
+.reselectButton {
+  border-radius: 13px;
+  background-color: #FF583E;
+  border: 3px solid white;
+  color: white;
+  text-overflow: ellipsis;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 400px;
+  height: 50px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+.reselectButton:hover{
+  background-color:#b33d2b;
+}
+
+.reselectButton:focus{
+  /*background-color:#477ba5;*/
+  outline: none;
+}
