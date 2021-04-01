@@ -1,12 +1,44 @@
 import * as go from "gojs";
 import { ReactDiagram } from "gojs-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Diagram.css";
 import { STATE_DATA } from "./stateData";
 
-export default function Diagram() {
+export default function Diagram(props) {
+  const [key, setKey] = useState(props.value);
   const [nodeData, setNodeData] = useState(STATE_DATA.nodeDataArray);
   const [linkData, setLinkData] = useState(STATE_DATA.linkDataArray);
+
+  const updatedNodeData = nodeData.map((node) => {
+    if (node.key === key) {
+      console.log(key);
+      return {
+        ...node,
+        fill: "#FB5940",
+      };
+    } else {
+      return node;
+    }
+  });
+
+  const updatedLinkData = linkData.map((link) => {
+    if (link.from === key) {
+      console.log(key);
+      return {
+        ...link,
+        visibleText: true,
+        category: "State",
+      };
+    } else {
+      return link;
+    }
+  });
+
+  useEffect(() => {
+    setKey(props.value);
+    setLinkData(updatedLinkData);
+    setNodeData(updatedNodeData);
+  }, [props.value]);
 
   function initDiagram() {
     const $ = go.GraphObject.make;
@@ -45,7 +77,7 @@ export default function Diagram() {
           strokeWidth: 0,
         },
         // Shape.fill is bound to Node.data.color
-        new go.Binding("fill", "color")
+        new go.Binding("fill", "fill")
       ),
       $(
         go.TextBlock,
@@ -63,11 +95,13 @@ export default function Diagram() {
 
     diagram.linkTemplate = $(
       go.Link,
+      new go.Binding("zOrder"),
       {
         relinkableFrom: false,
         relinkableTo: false,
       },
       {
+        zOrder: 9,
         routing: go.Link.AvoidsNodes,
         adjusting: go.Link.End,
         curve: go.Link.JumpOver,
@@ -77,7 +111,12 @@ export default function Diagram() {
       new go.Binding("opacity").ofModel(),
       new go.Binding("points").makeTwoWay(),
       $(go.Shape, { strokeWidth: 2.5, stroke: "#c0c0c0" }), //Link path shape
-      $(go.Shape, { toArrow: "Standard", fill: "#c0c0c0", stroke: null }) // Arrow head
+      $(go.Shape, { toArrow: "Standard", fill: "#c0c0c0", stroke: null }), // Arrow head
+      $(
+        go.TextBlock,
+        new go.Binding("text", "text"),
+        new go.Binding("visible", "visibleText")
+      ) // this is a Link label
     );
 
     diagram.nodeTemplateMap.add(
@@ -86,15 +125,21 @@ export default function Diagram() {
         go.Node,
         "Spot",
         { desiredSize: new go.Size(90, 90) },
+        { locationSpot: go.Spot.Center },
         new go.Binding("location", "loc", go.Point.parse).makeTwoWay(
           go.Point.stringify
         ),
-        $(go.Shape, "Circle", {
-          fill: "#5490C2" /* green */,
-          stroke: null,
-          portId: "",
-          cursor: "pointer",
-        }),
+        $(
+          go.Shape,
+          "Circle",
+          {
+            fill: "#5490C2" /* green */,
+            stroke: null,
+            portId: "",
+            cursor: "pointer",
+          },
+          new go.Binding("fill", "fill")
+        ),
         $(go.TextBlock, "Start", {
           font: "bold 16pt Itim, bold arial, sans-serif",
           stroke: "whitesmoke",
@@ -108,15 +153,21 @@ export default function Diagram() {
         go.Node,
         "Spot",
         { desiredSize: new go.Size(90, 90) },
+        { locationSpot: go.Spot.Center },
         new go.Binding("location", "loc", go.Point.parse).makeTwoWay(
           go.Point.stringify
         ),
-        $(go.Shape, "Circle", {
-          fill: "#30C386",
-          stroke: null,
-          portId: "",
-          cursor: "pointer",
-        }),
+        $(
+          go.Shape,
+          "Circle",
+          {
+            fill: "#30C386",
+            stroke: null,
+            portId: "",
+            cursor: "pointer",
+          },
+          new go.Binding("fill", "fill")
+        ),
         $(go.Shape, "Circle", {
           fill: null,
           desiredSize: new go.Size(70, 70),
@@ -135,43 +186,17 @@ export default function Diagram() {
       )
     );
 
-    diagram.nodeTemplateMap.add(
-      "State",
-      $(
-        go.Node,
-        "Spot",
-        { desiredSize: new go.Size(90, 90) },
-        { locationSpot: go.Spot.Center },
-        new go.Binding("location", "loc", go.Point.parse).makeTwoWay(
-          go.Point.stringify
-        ),
-        $(go.Shape, "Circle", {
-          fill: "#FB5940",
-          stroke: null,
-          portId: "",
-          cursor: "pointer",
-        }),
-        $(
-          go.TextBlock,
-          {
-            font: "10pt itim, sans-serif",
-            stroke: "whitesmoke",
-            textAlign: "center",
-          },
-          new go.Binding("text").makeTwoWay()
-        )
-      )
-    );
-
     diagram.linkTemplateMap.add(
       "State",
       $(
         go.Link,
+        new go.Binding("zOrder"),
         {
           relinkableFrom: false,
           relinkableTo: false,
         },
         {
+          zOrder: 10,
           routing: go.Link.AvoidsNodes,
           adjusting: go.Link.End,
           curve: go.Link.JumpOver,
@@ -181,7 +206,13 @@ export default function Diagram() {
         new go.Binding("opacity").ofModel(),
         new go.Binding("points").makeTwoWay(),
         $(go.Shape, { strokeWidth: 2.5, stroke: "#606060" }), //Link path shape
-        $(go.Shape, { toArrow: "Standard", fill: "#606060", stroke: null }) // Arrow head
+        $(go.Shape, { toArrow: "Standard", fill: "#606060", stroke: null }), // Arrow head
+        $(
+          go.TextBlock,
+          new go.Binding("text", "text"),
+          new go.Binding("visible", "visibleText"),
+          { font: "12pt Itim", stroke : "black", textAlign: "center" }
+        ) // this is a Link label
       )
     );
 
@@ -191,6 +222,9 @@ export default function Diagram() {
 
   return (
     <div>
+      {/* {
+        console.log(props.value)
+      } */}
       <ReactDiagram
         initDiagram={initDiagram}
         divClassName="diagram-component"
