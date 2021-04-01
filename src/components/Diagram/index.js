@@ -6,12 +6,13 @@ import { STATE_DATA } from "./stateData";
 
 export default function Diagram(props) {
   const [key, setKey] = useState(props.value);
+  const [prevKey, setPrevKey] = useState();
   const [nodeData, setNodeData] = useState(STATE_DATA.nodeDataArray);
   const [linkData, setLinkData] = useState(STATE_DATA.linkDataArray);
 
   const updatedNodeData = nodeData.map((node) => {
     if (node.key === key) {
-      console.log(key);
+      console.log("node");
       return {
         ...node,
         fill: "#FB5940",
@@ -23,18 +24,20 @@ export default function Diagram(props) {
 
   const updatedLinkData = linkData.map((link) => {
     if (link.from === key) {
-      console.log(key);
+      console.log("link");
       return {
         ...link,
         visibleText: true,
         category: "State",
       };
-    } else {
+    }
+    else {
       return link;
     }
   });
 
   useEffect(() => {
+    setPrevKey(key)
     setKey(props.value);
     setLinkData(updatedLinkData);
     setNodeData(updatedNodeData);
@@ -196,7 +199,7 @@ export default function Diagram(props) {
           relinkableTo: false,
         },
         {
-          zOrder: 10,
+          zOrder: 99,
           routing: go.Link.AvoidsNodes,
           adjusting: go.Link.End,
           curve: go.Link.JumpOver,
@@ -222,9 +225,9 @@ export default function Diagram(props) {
 
   return (
     <div>
-      {/* {
-        console.log(props.value)
-      } */}
+      {
+        console.log(prevKey, key)
+      }
       <ReactDiagram
         initDiagram={initDiagram}
         divClassName="diagram-component"
