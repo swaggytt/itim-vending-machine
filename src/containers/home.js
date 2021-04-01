@@ -6,7 +6,7 @@ import InputButton, {
 } from "../components/inputButton/inputButton.js";
 import "./home.css";
 import { useState } from "react";
-import LogoNavbar from "./components/LogoNavbar";
+import LogoNavbar from "../components/LogoNavbar";
 
 export default function Home() {
   const [key, setKey] = useState(0);
