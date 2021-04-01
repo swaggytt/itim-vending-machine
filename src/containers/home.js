@@ -8,7 +8,8 @@ export default function Home() {
 
   return (
     <div className="container">
-      <div className="state-diagram">
+      <LogoNavbar />
+      {/* <div className="state-diagram">
         <Diagram value={key} />
         <button onClick={() => setKey((prev) => (prev = 1))}>Cone</button>
         <button>Bread</button>
@@ -16,7 +17,7 @@ export default function Home() {
         <button>Choco</button>
         <button>Vanilla</button>
         <button>Accept</button>
-      </div>
+      </div> */}
     </div>
   );
 }
