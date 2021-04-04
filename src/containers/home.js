@@ -5,10 +5,10 @@ import InputButton, {
   TwoChoices,
 } from "../components/inputButton/inputButton.js";
 import "./home.css";
-import { useState } from "react";
 import LogoNavbar from "../components/LogoNavbar";
 import { useState, useEffect } from "react";
 import useForceUpdate from "../function/useForceUpdate";
+import Diagram from "../components/Diagram";
 
 export default function Home() {
   const [input, setInput] = useState("start");
