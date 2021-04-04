@@ -61,6 +61,7 @@ export default function initDiagram() {
       relinkableTo: false,
     },
     {
+      zOrder: 9,
       routing: go.Link.AvoidsNodes,
       adjusting: go.Link.End,
       curve: go.Link.JumpOver,
@@ -155,7 +156,7 @@ export default function initDiagram() {
         relinkableTo: false,
       },
       {
-        zOrder: 10,
+        zOrder: 99,
         routing: go.Link.AvoidsNodes,
         adjusting: go.Link.End,
         curve: go.Link.JumpOver,
