@@ -19,6 +19,9 @@ export default function Diagram(props) {
     if (clock) {
       prevKey = key;
       key = setStateDiagram(input, key);
+      if (key === 0) {
+        prevKey = key;
+      }
       console.log(prevKey, key);
     }
     clock = !clock;
@@ -32,6 +35,11 @@ export default function Diagram(props) {
       return {
         ...node,
         fill: "#FB5940",
+      };
+    } else if (node.key === prevKey && prevKey !== key) {
+      return {
+        ...node,
+        fill: "#CA6C5E",
       };
     } else {
       return node;
