@@ -112,5 +112,8 @@ export const STATE_DATA = {
     { key: -69, from: 12, to: 11, text: "chocolate", visibleText: false, points: [790, 207, 790, 143] },
     { key: -70, from: 12, to: 12, text: "bread", visibleText: false, points: [840, 265, 860, 265, 860, 300, 830, 300, 830, 280] },
     { key: -71, from: 12, to: 13, text: "confirm", visibleText: false, points: [845, 250, 1020, 250, 1020, 40] },
+
+    //From Confirm
+    { key: -72, from: 13, to: 13, text: " ", visibleText: false, points: [1040, -20, 1070, -20, 1070, 20, 1040, 20]},
   ],
 };
