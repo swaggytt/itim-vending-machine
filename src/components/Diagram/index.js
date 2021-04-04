@@ -36,11 +36,6 @@ export default function Diagram(props) {
         ...node,
         fill: "#FB5940",
       };
-    } else if (node.key === prevKey && prevKey !== key) {
-      return {
-        ...node,
-        fill: "#CA6C5E",
-      };
     } else {
       return node;
     }
