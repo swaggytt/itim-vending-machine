@@ -23,7 +23,7 @@ export default function Home() {
         <button onClick={() => {setInput("sticky");setClick(!click)}}>StickyRice</button>
         <button onClick={() => {setInput("choco");setClick(!click)}}>Choco</button>
         <button onClick={() => {setInput("vanilla");setClick(!click)}}>Vanilla</button>
-        <button onClick={() => {setInput("confirm");setClick(!click)}}>Accept</button>
+        <button onClick={() => {setInput("confirm");setClick(!click)}}>Confirm</button>
         <button onClick={() => {setInput("start");setClick(!click)}}>Reset</button>
       </div>
     </div>
