@@ -4,11 +4,11 @@ import "./inputButton.css";
 export function TwoChoices({ valueHeader, valueLeft, valueRight }) {
   return (
     <div>
-      <div class="twoChoicesInputButton">
-        <div class="header">{valueHeader}</div>
-        <div class="groupedButton">
-          <button class="halfChildButton">{valueLeft}</button>
-          <button class="halfChildButton">{valueRight}</button>
+      <div className="twoChoicesInputButton">
+        <div className="header">{valueHeader}</div>
+        <div className="groupedButton">
+          <button className="halfChildButton">{valueLeft}</button>
+          <button className="halfChildButton">{valueRight}</button>
         </div>
       </div>
     </div>
@@ -18,10 +18,10 @@ export function TwoChoices({ valueHeader, valueLeft, valueRight }) {
 export function OneChoice({ valueHeader, valueChild }) {
   return (
     <div>
-      <div class="oneChoicesInputButton">
-        <div class="header">{valueHeader}</div>
-        <div class="groupedButton">
-          <button class="fullChildButton">{valueChild}</button>
+      <div className="oneChoicesInputButton">
+        <div className="header">{valueHeader}</div>
+        <div className="groupedButton">
+          <button className="fullChildButton">{valueChild}</button>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@ export function OneChoice({ valueHeader, valueChild }) {
 export function ConfirmButton(props){
   return(
     <div>
-      <button class="confirmButton">
+      <button className="confirmButton">
       {props.value}
       </button>
     </div>
@@ -41,11 +41,11 @@ export function ConfirmButton(props){
 export function ReselectButton(props){
   return(
     <div>
-      <button class="reselectButton">
+      <button className="reselectButton">
       {props.value}
       </button>
     </div>
   );
 }
-
+// eslint-disable-next-line
 export default {OneChoice,TwoChoices,ConfirmButton,ReselectButton}
