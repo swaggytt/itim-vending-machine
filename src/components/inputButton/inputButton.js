@@ -47,5 +47,5 @@ export function ReselectButton(props){
     </div>
   );
 }
-// eslint-disable-next-line
+
 export default {OneChoice,TwoChoices,ConfirmButton,ReselectButton}

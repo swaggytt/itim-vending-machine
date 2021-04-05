@@ -28,7 +28,6 @@ export default function Diagram(props) {
     // console.log(clock)
     setLinkData(updatedLinkData);
     setNodeData(updatedNodeData);
-    // eslint-disable-next-line
   }, [click]);
 
   const updatedNodeData = nodeData.map((node) => {

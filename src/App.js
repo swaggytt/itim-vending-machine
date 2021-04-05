@@ -18,7 +18,6 @@ function App() {
   useEffect(() => {
     forceUpdate();
     // console.log("force")
-    // eslint-disable-next-line
   }, [click]);
 
   return (
