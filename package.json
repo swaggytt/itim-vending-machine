@@ -15,12 +15,7 @@
     "react-modal": "^3.12.1",
     "react-modal-bootstrap": "^1.1.1",
     "react-router-dom": "^5.2.0",
-<<<<<<< HEAD
     "react-scripts": "^4.0.3",
-=======
-    "react-scripts": "4.0.3",
-    "reactjs-popup": "^2.0.4",
->>>>>>> origin/components/information
     "web-vitals": "^1.1.0"
   },
   "scripts": {
