@@ -1,6 +1,7 @@
 .diagram-component {
-  width: 1200px;
+  width: 70vw;
   height: 650px;
   border: solid 1px black;
   background-color: white;
+  border-radius: 1rem;
 }
