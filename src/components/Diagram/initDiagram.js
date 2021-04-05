@@ -2,21 +2,6 @@ import * as go from "gojs";
 
 export default function initDiagram() {
   const $ = go.GraphObject.make;
-  // function highlightNode(nodeId) {
-  //   var node = diagram.findNodeForKey(nodeId++);
-  //   // console.log(node);
-  //   if (node !== null) {
-  //     // make sure the selected node is in the viewport
-  //     diagram.scrollToRect(node.actualBounds);
-  //     // move the large yellow node behind the selected node to highlight it
-  //     highlighter.location = new go.Point(
-  //       node.location.x + 40,
-  //       node.location.y + 40
-  //     );
-  //     // console.log(node.location)
-  //     // console.log(highlighter.location)
-  //   }
-  // }
   const diagram = $(go.Diagram, {
     "undoManager.isEnabled": true, // must be set to allow for model change listening
     // 'undoManager.maxHistoryLength': 0,  // uncomment disable undo/redo functionality
@@ -222,23 +207,6 @@ export default function initDiagram() {
       ) // this is a Link label
     )
   );
-  // const highlighter = $(
-  //   go.Part,
-  //   "Auto",
-  //   {
-  //     layerName: "Background",
-  //     selectable: false,
-  //     isInDocumentBounds: false,
-  //     locationSpot: go.Spot.Center,
-  //   },
-  //   $(go.Shape, "Ellipse", {
-  //     fill: $(go.Brush, "Radial", { 0.5: "#ff004d", 1.0: "rgba(0, 0, 0, 0)" }),
-  //     stroke: null,
-  //     desiredSize: new go.Size(150, 150),
-  //   })
-  // );
-  // diagram.add(highlighter);
-  // highlightNode()
 
   diagram.isReadOnly = true;
   return diagram;
