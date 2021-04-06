@@ -28,6 +28,7 @@ export default function Diagram(props) {
     // console.log(clock)
     setLinkData(updatedLinkData);
     setNodeData(updatedNodeData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [click]);
 
   const updatedNodeData = nodeData.map((node) => {
