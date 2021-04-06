@@ -14,7 +14,7 @@ export default function initDiagram() {
     }),
     allowCopy: false,
     allowDelete: false,
-    // allowSelect: false,
+    allowSelect: false,
     allowLink: false,
   });
   // define a simple Node template
