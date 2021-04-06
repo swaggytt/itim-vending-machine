@@ -13,10 +13,12 @@ function App() {
   useEffect(() => {
     forceUpdate();
     // console.log("force")
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [click]);
 
   return (
     <div className="App">
+      <LogoNavbar />
       <div key={key} className="state-diagram">
         <Diagram value={input} click={click} />
         <button
