@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <LogoNavbar /> */}
+      <LogoNavbar />
       <div key={key} className="state-diagram">
         <Diagram value={input} click={click} />
         <button
