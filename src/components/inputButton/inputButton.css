@@ -128,3 +128,24 @@
   /*background-color:#477ba5;*/
   outline: none;
 }
+
+.button-state{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.container-selector{
+  margin: 10px 0px;
+}
+
+.taste-selector{
+  margin: 10px 0px;
+}
+
+.addon-selector{
+  margin: 10px 0px;
+}
+
+.confirm-button{
+  margin-top: 10px;
+}
