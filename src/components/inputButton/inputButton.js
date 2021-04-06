@@ -1,7 +1,6 @@
-import React, { PropTypes, Component } from "react";
 import "./inputButton.css";
 
-export function TwoChoices({ valueHeader, valueLeft, valueRight }) {
+function TwoChoices({ valueHeader, valueLeft, valueRight }) {
   return (
     <div>
       <div className="twoChoicesInputButton">
@@ -15,7 +14,7 @@ export function TwoChoices({ valueHeader, valueLeft, valueRight }) {
   );
 }
 
-export function OneChoice({ valueHeader, valueChild }) {
+function OneChoice({ valueHeader, valueChild }) {
   return (
     <div>
       <div className="oneChoicesInputButton">
@@ -28,7 +27,7 @@ export function OneChoice({ valueHeader, valueChild }) {
   );
 }
 
-export function ConfirmButton(props){
+function ConfirmButton(props){
   return(
     <div>
       <button className="confirmButton">
@@ -38,7 +37,7 @@ export function ConfirmButton(props){
   );
 }
 
-export function ReselectButton(props){
+function ReselectButton(props){
   return(
     <div>
       <button className="reselectButton">
@@ -48,4 +47,41 @@ export function ReselectButton(props){
   );
 }
 
-export default {OneChoice,TwoChoices,ConfirmButton,ReselectButton}
+export function InputPanel(){
+  return(
+    <div className="button-state">
+        
+        <div class="container-selector">
+          <TwoChoices
+            valueHeader="ภาชนะ"
+            valueLeft="item left"
+            valueRight="item right"
+          ></TwoChoices>
+        </div>
+        <div class="taste-selector">
+          <TwoChoices
+            valueHeader="รสชาติ"
+            valueLeft="item left"
+            valueRight="item right"
+          ></TwoChoices>
+        </div>
+        
+        <div class="addon-selector">
+          <OneChoice
+            valueHeader="Add-on"
+            valueChild="item child"
+          ></OneChoice>
+        </div>
+        
+        <div class="confirm-button">
+          <ConfirmButton value="ยืนยัน"></ConfirmButton>
+        </div>
+        
+        <div class="reselect-button">
+          <ReselectButton value="เลือกใหม่"></ReselectButton>
+        </div>
+      </div>
+  );
+}
+
+export default InputPanel;

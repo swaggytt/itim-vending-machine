@@ -1,10 +1,5 @@
 import "./App.css";
-import InputButton, {
-  ConfirmButton,
-  OneChoice,
-  ReselectButton,
-  TwoChoices,
-} from "./components/inputButton/inputButton.js";
+import InputPanel from "./components/inputButton/inputButton.js";
 import LogoNavbar from "./components/LogoNavbar";
 import { useState, useEffect } from "react";
 import useForceUpdate from "./function/useForceUpdate";
@@ -18,10 +13,12 @@ function App() {
   useEffect(() => {
     forceUpdate();
     // console.log("force")
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [click]);
 
   return (
     <div className="App">
+      {/* <LogoNavbar /> */}
       <div key={key} className="state-diagram">
         <Diagram value={input} click={click} />
         <button
@@ -81,31 +78,7 @@ function App() {
           Reset
         </button>
       </div>
-      <div className="button-state">
-        <p>Two choices</p>
-        <div>
-          <TwoChoices
-            valueHeader="item header"
-            valueLeft="item left"
-            valueRight="item right"
-          ></TwoChoices>
-        </div>
-        <p>One choice</p>
-        <div>
-          <OneChoice
-            valueHeader="item header"
-            valueChild="item child"
-          ></OneChoice>
-        </div>
-        <p>Confirm button</p>
-        <div>
-          <ConfirmButton value="Confirm"></ConfirmButton>
-        </div>
-        <p>Confirm button</p>
-        <div>
-          <ReselectButton value="Reselect"></ReselectButton>
-        </div>
-      </div>
+      <InputPanel></InputPanel>
     </div>
   );
 }
