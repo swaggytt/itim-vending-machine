@@ -21,64 +21,8 @@ function App() {
       {/* <LogoNavbar /> */}
       <div key={key} className="state-diagram">
         <Diagram value={input} click={click} />
-        <button
-          onClick={() => {
-            setInput("cone");
-            setClick(!click);
-          }}
-        >
-          Cone
-        </button>
-        <button
-          onClick={() => {
-            setInput("bread");
-            setClick(!click);
-          }}
-        >
-          Bread
-        </button>
-        <button
-          onClick={() => {
-            setInput("sticky");
-            setClick(!click);
-          }}
-        >
-          StickyRice
-        </button>
-        <button
-          onClick={() => {
-            setInput("choco");
-            setClick(!click);
-          }}
-        >
-          Choco
-        </button>
-        <button
-          onClick={() => {
-            setInput("vanilla");
-            setClick(!click);
-          }}
-        >
-          Vanilla
-        </button>
-        <button
-          onClick={() => {
-            setInput("confirm");
-            setClick(!click);
-          }}
-        >
-          Confirm
-        </button>
-        <button
-          onClick={() => {
-            setInput("start");
-            setClick(!click);
-          }}
-        >
-          Reset
-        </button>
       </div>
-      <InputPanel></InputPanel>
+      <InputPanel setInput={setInput} setClick={setClick} click={click}></InputPanel>
     </div>
   );
 }
