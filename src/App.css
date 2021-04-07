@@ -31,3 +31,9 @@
 .button-state {
   background-color: white;
 }
+
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

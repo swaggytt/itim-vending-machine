@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import "./ImageResult.css";
 import cone from "./cone.png";
 import conesticky from "./conesticky.png";

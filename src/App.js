@@ -11,6 +11,7 @@ import useModal from "react-hooks-use-modal";
 function App() {
   const [input, setInput] = useState("start");
   const [click, setClick] = useState(true);
+  const [finish, setFinish] = useState(false);
   const { key, forceUpdate } = useForceUpdate();
 
   const [Modal, open, close, isOpen] = useModal("root", {
@@ -19,6 +20,13 @@ function App() {
 
   useEffect(() => {
     forceUpdate();
+    if(input === "start" || input === "reset"){
+      setFinish(false)
+    }
+    if(localStorage.getItem("state") === "13" && finish === false){
+      open()
+      setFinish(true)
+    }
     // console.log("force")
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [click]);
@@ -29,21 +37,20 @@ function App() {
       <div key={key} className='state-diagram'>
         <Diagram value={input} click={click} />
       </div>
-      <div className='resultPanel'>
+      <div>
         <ImageResult
           state={parseInt(localStorage.getItem("state"))}
-          className='space'
         />
         <InputPanel setInput={setInput} setClick={setClick} click={click} />
       </div>
       <Information />
-      {localStorage.getItem("state") === "13" ? { open } : <></>}
       <Modal>
         <div className='Container'>
-          <ImageResult state={parseInt(localStorage.getItem("state"))} />
+          <div>Your Result</div>
+          <ImageResult state={parseInt(localStorage.getItem("prevState"))} />
         </div>
         <button onClick={close}>CLOSED</button>
-      </Modal>
+      </Modal> 
     </div>
   );
 }

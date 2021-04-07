@@ -20,6 +20,7 @@ export default function Diagram(props) {
       prevKey = key;
       key = setStateDiagram(input, key);
       localStorage.setItem("state", key);
+      localStorage.setItem("prevState", prevKey);
       if (key === 0) {
         prevKey = key;
       }
