@@ -1,16 +1,16 @@
 .twoChoicesInputButton {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  max-height: 100px;
-  margin: 10px 0px ;
+  width: 400px;
+  height: 100px;
+  margin: 10px 0px;
 }
 .oneChoicesInputButton {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  max-height: 100px;
-  margin: 10px 0px ;
+  width: 400px;
+  height: 100px;
+  margin: 10px 0px;
 }
 
 .groupedButton {
@@ -23,7 +23,7 @@
 .header {
   border-radius: 10px;
   border: 3px solid white;
-  background-color: #F899A5;
+  background-color: #f899a5;
   color: white;
   text-overflow: ellipsis;
   flex: 100%;
@@ -33,7 +33,7 @@
 }
 .halfChildButton {
   border-radius: 10px;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   border: 3px solid white;
   color: white;
   text-overflow: ellipsis;
@@ -47,18 +47,18 @@
   cursor: pointer;
   transition-duration: 0.4s;
 }
-.halfChildButton:hover{
-    background-color:#2cdda9;
+.halfChildButton:hover {
+  background-color: #2cdda9;
 }
 
-.halfChildButton:focus{
-    background-color:#2cdda9;
-    outline: none;
+.halfChildButton:focus {
+  background-color: #2cdda9;
+  outline: none;
 }
 
 .fullChildButton {
   border-radius: 10px;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   border: 3px solid white;
   color: white;
   text-overflow: ellipsis;
@@ -72,18 +72,18 @@
   cursor: pointer;
   transition-duration: 0.4s;
 }
-.fullChildButton:hover{
-  background-color:#2cdda9;
+.fullChildButton:hover {
+  background-color: #2cdda9;
 }
 
-.fullChildButton:focus{
-  background-color:#2cdda9;
+.fullChildButton:focus {
+  background-color: #2cdda9;
   outline: none;
 }
 
 .confirmButton {
   border-radius: 13px;
-  background-color: #5490C2;
+  background-color: #5490c2;
   border: 3px solid white;
   color: white;
   text-overflow: ellipsis;
@@ -96,18 +96,18 @@
   cursor: pointer;
   transition-duration: 0.4s;
 }
-.confirmButton:hover{
-  background-color:#477ba5;
+.confirmButton:hover {
+  background-color: #477ba5;
 }
 
-.confirmButton:focus{
+.confirmButton:focus {
   /*background-color:#477ba5;*/
   outline: none;
 }
 
 .reselectButton {
   border-radius: 13px;
-  background-color: #FF583E;
+  background-color: #ff583e;
   border: 3px solid white;
   color: white;
   text-overflow: ellipsis;
@@ -120,32 +120,37 @@
   cursor: pointer;
   transition-duration: 0.4s;
 }
-.reselectButton:hover{
-  background-color:#b33d2b;
+.reselectButton:hover {
+  background-color: #b33d2b;
 }
 
-.reselectButton:focus{
+.reselectButton:focus {
   /*background-color:#477ba5;*/
   outline: none;
 }
 
-.button-state{
+.button-state {
+  border-radius: 25px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
   flex-direction: column;
-  justify-content: flex-end;
 }
-.container-selector{
+.container-selector {
+  text-align: center;
   margin: 10px 0px;
 }
 
-.taste-selector{
+.taste-selector {
   margin: 10px 0px;
 }
 
-.addon-selector{
+.addon-selector {
   margin: 10px 0px;
 }
 
-.confirm-button{
+.confirm-button {
   margin-top: 10px;
 }

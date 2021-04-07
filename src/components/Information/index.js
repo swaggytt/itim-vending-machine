@@ -9,20 +9,20 @@ const Information = () => {
   });
   return (
     <div>
-      <span class="dot" onClick={open}>
+      <span class='dot' onClick={open}>
         !
       </span>
       <Modal>
-        <div className="Container">
-          <div className="Header">
+        <div className='Container'>
+          <div className='Header'>
             <h1>How to use</h1>
           </div>
 
-          <div className="Information">
+          <div className='Information'>
             <p>อยากจะใส่อะไรก็ใส่ไปเลย</p>
           </div>
 
-          <div className="Button">
+          <div className='Button'>
             <button onClick={close}>CLOSE</button>
           </div>
         </div>
