@@ -55,3 +55,20 @@
   transition-duration: 0.4s;
   margin-bottom: 20px;
 }
+
+.state-diagram {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-tape {
+  width: 65vw;
+  height: 100px;
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 1rem;
+  padding: 10px;
+  margin-top: 10px;
+}
