@@ -20,37 +20,35 @@ function App() {
 
   useEffect(() => {
     forceUpdate();
-    if(input === "start" || input === "reset"){
-      setFinish(false)
+    if (input === "start" || input === "reset") {
+      setFinish(false);
     }
-    if(localStorage.getItem("state") === "13" && finish === false){
-      open()
-      setFinish(true)
+    if (localStorage.getItem("state") === "13" && finish === false) {
+      open();
+      setFinish(true);
     }
     // console.log("force")
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [click]);
 
   return (
-    <div className='App'>
+    <div className="App">
       {/* <LogoNavbar /> */}
-      <div key={key} className='state-diagram'>
+      <div key={key} className="state-diagram">
         <Diagram value={input} click={click} />
       </div>
       <div>
-        <ImageResult
-          state={parseInt(localStorage.getItem("state"))}
-        />
+        <ImageResult state={parseInt(localStorage.getItem("state"))} />
         <InputPanel setInput={setInput} setClick={setClick} click={click} />
       </div>
       <Information />
       <Modal>
-        <div className='Container'>
-          <div>Your Result</div>
+        <div className="Container">
+          <div className="Result">Your Result</div>
           <ImageResult state={parseInt(localStorage.getItem("prevState"))} />
+          <button className="close-button" onClick={close}>CLOSED</button>
         </div>
-        <button onClick={close}>CLOSED</button>
-      </Modal> 
+      </Modal>
     </div>
   );
 }
