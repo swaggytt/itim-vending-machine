@@ -23,7 +23,7 @@ const Information = () => {
           </div>
 
           <div className='Button'>
-            <button onClick={close}>CLOSE</button>
+            <button onClick={close} className="close-button">CLOSE</button>
           </div>
         </div>
       </Modal>

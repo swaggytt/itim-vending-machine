@@ -28,39 +28,41 @@ function App() {
       open();
       setFinish(true);
     }
-    
-    if(input === "reset"){
-      setTape("")
-    }else if(input !== "start"){
+
+    if (input === "reset") {
+      setTape("");
+    } else if (input !== "start") {
       setTape(tape + " " + input);
     }
-    
+
     // console.log("force")
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [click]);
 
   return (
-    <div className="App">
-      {/* <LogoNavbar /> */}
-      <div key={key} className="state-diagram">
-        <Diagram value={input} click={click} />
-        <div className="input-tape">{tape}</div>
-      </div>
-      
-      <div>
-        <ImageResult state={parseInt(localStorage.getItem("state"))} />
-        <InputPanel setInput={setInput} setClick={setClick} click={click} />
-      </div>
-      <Information />
-      <Modal>
-        <div className="Container">
-          <div className="Result">Your Result</div>
-          <ImageResult state={parseInt(localStorage.getItem("prevState"))} />
-          <button className="close-button" onClick={close}>
-            CLOSED
-          </button>
+    <div>
+      <LogoNavbar />
+      <div className="App">
+        <div key={key} className="state-diagram">
+          <Diagram value={input} click={click} />
+          <div className="input-tape">{tape}</div>
         </div>
-      </Modal>
+
+        <div>
+          <ImageResult state={parseInt(localStorage.getItem("state"))} />
+          <InputPanel setInput={setInput} setClick={setClick} click={click} />
+        </div>
+        <Information />
+        <Modal>
+          <div className="Container">
+            <div className="Result">Your Result</div>
+            <ImageResult state={parseInt(localStorage.getItem("prevState"))} />
+            <button className="close-button" onClick={close}>
+              CLOSED
+            </button>
+          </div>
+        </Modal>
+      </div>
     </div>
   );
 }
