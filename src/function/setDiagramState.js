@@ -19,7 +19,7 @@ function setStateDiagram(input, key) {
     } else {
       return key;
     }
-  } else if (input === "sticky") {
+  } else if (input === "sticky rice") {
     if (key === 1 || key === 2) {
       return key + 2;
     } else if (key === 3 || key === 4) {
@@ -31,7 +31,7 @@ function setStateDiagram(input, key) {
     } else {
       return key;
     }
-  } else if (input === "choco") {
+  } else if (input === "chocolate") {
     if (key === 1) {
       return 5;
     } else if (key === 2) {
@@ -81,7 +81,7 @@ function setStateDiagram(input, key) {
     } else {
       return 13;
     }
-  } else if (input === "start") {
+  } else if (input === "start" || input === "reset") {
     return 0;
   }
 }

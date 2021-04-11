@@ -19,10 +19,12 @@ export default function Diagram(props) {
     if (clock) {
       prevKey = key;
       key = setStateDiagram(input, key);
+      localStorage.setItem("state", key);
+      localStorage.setItem("prevState", prevKey);
       if (key === 0) {
         prevKey = key;
       }
-      console.log(prevKey, key);
+    //   console.log(prevKey, key);
     }
     clock = !clock;
     // console.log(clock)
@@ -63,7 +65,7 @@ export default function Diagram(props) {
     <div>
       <ReactDiagram
         initDiagram={initDiagram}
-        divClassName="diagram-component"
+        divClassName='diagram-component'
         nodeDataArray={nodeData}
         linkDataArray={linkData}
       ></ReactDiagram>

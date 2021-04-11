@@ -1,50 +1,58 @@
-.Container{
-    width: 700px; 
-    height: 500px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 25px;
-
+.Container {
+  width: 700px;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 25px;
 }
 
-.Header{
-    text-align: center;
-    height: 60px;
-
+.Header {
+  text-align: center;
+  height: 60px;
 }
 
-.Information{
-    font-size: 20px;
-    height: 360px;
-    padding: 20px 20px;
-  
+.Information {
+  font-size: 20px;
+  height: 360px;
+  padding: 20px 20px;
 }
 
-.Button{
-    position:bottom;
-    padding: 10px;
-    text-align: center;
-
+.Button {
+  position: bottom;
+  padding: 10px;
+  text-align: center;
 }
 
 .dot {
-    position: relative;
-    height: 55px;
-    width: 55px;
-    background-color: #fac941;
-    border-radius: 50%;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 36px;
-    color: white;
-    font-weight: bold;
-
-
-  }
-
-.Icon{
-
+  position: relative;
+  height: 55px;
+  width: 55px;
+  background-color: #fac941;
+  border-radius: 50%;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
+
+.close-button {
+  border-radius: 13px;
+  background-color: #ff583e;
+  border: 3px solid white;
+  color: white;
+  font-size: 16px;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  margin-bottom: 20px;
+}
+
+/*.Icon{
+
+} */

@@ -1,86 +1,147 @@
 import "./inputButton.css";
 
-function TwoChoices({ valueHeader, valueLeft, valueRight }) {
+function TwoChoices({
+  valueHeader,
+  valueLeft,
+  valueRight,
+  setInput,
+  setClick,
+  click,
+}) {
   return (
     <div>
-      <div className="twoChoicesInputButton">
-        <div className="header">{valueHeader}</div>
-        <div className="groupedButton">
-          <button className="halfChildButton">{valueLeft}</button>
-          <button className="halfChildButton">{valueRight}</button>
+      <div class='twoChoicesInputButton'>
+        <div class='header'>{valueHeader}</div>
+        <div class='groupedButton'>
+          <button
+            class='halfChildButton'
+            onClick={() => {
+              setInput(valueLeft);
+              setClick(!click);
+            }}
+          >
+            {valueLeft}
+          </button>
+          <button
+            class='halfChildButton'
+            onClick={() => {
+              setInput(valueRight);
+              setClick(!click);
+            }}
+          >
+            {valueRight}
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-function OneChoice({ valueHeader, valueChild }) {
+function OneChoice({ valueHeader, valueChild, setInput, setClick, click }) {
   return (
     <div>
-      <div className="oneChoicesInputButton">
-        <div className="header">{valueHeader}</div>
-        <div className="groupedButton">
-          <button className="fullChildButton">{valueChild}</button>
+      <div class='oneChoicesInputButton'>
+        <div class='header'>{valueHeader}</div>
+        <div class='groupedButton'>
+          <button
+            class='fullChildButton'
+            onClick={() => {
+              setInput(valueChild);
+              setClick(!click);
+            }}
+          >
+            {valueChild}
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-function ConfirmButton(props){
-  return(
+function ConfirmButton(props) {
+  return (
     <div>
-      <button className="confirmButton">
-      {props.value}
+      <button
+        class='confirmButton'
+        onClick={() => {
+          props.setInput(props.value);
+          props.setClick(!props.click);
+        }}
+      >
+        {props.value}
       </button>
     </div>
   );
 }
 
-function ReselectButton(props){
-  return(
+function ReselectButton(props) {
+  return (
     <div>
-      <button className="reselectButton">
-      {props.value}
+      <button
+        class='reselectButton'
+        onClick={() => {
+          props.setInput(props.value);
+          props.setClick(!props.click);
+        }}
+      >
+        {props.value}
       </button>
     </div>
   );
 }
 
-export function InputPanel(){
-  return(
-    <div className="button-state">
-        
-        <div class="container-selector">
-          <TwoChoices
-            valueHeader="ภาชนะ"
-            valueLeft="item left"
-            valueRight="item right"
-          ></TwoChoices>
-        </div>
-        <div class="taste-selector">
-          <TwoChoices
-            valueHeader="รสชาติ"
-            valueLeft="item left"
-            valueRight="item right"
-          ></TwoChoices>
-        </div>
-        
-        <div class="addon-selector">
-          <OneChoice
-            valueHeader="Add-on"
-            valueChild="item child"
-          ></OneChoice>
-        </div>
-        
-        <div class="confirm-button">
-          <ConfirmButton value="ยืนยัน"></ConfirmButton>
-        </div>
-        
-        <div class="reselect-button">
-          <ReselectButton value="เลือกใหม่"></ReselectButton>
-        </div>
+export function InputPanel(props) {
+  return (
+    <div className='button-state'>
+      <div class='container-selector'>
+        <TwoChoices
+          valueHeader='ภาชนะ'
+          valueLeft='cone'
+          valueRight='bread'
+          setInput={props.setInput}
+          setClick={props.setClick}
+          click={props.click}
+        ></TwoChoices>
       </div>
+      <div class='taste-selector'>
+        <TwoChoices
+          valueHeader='รสชาติ'
+          valueLeft='chocolate'
+          valueRight='vanilla'
+          setInput={props.setInput}
+          setClick={props.setClick}
+          click={props.click}
+        ></TwoChoices>
+      </div>
+
+      <div class='addon-selector'>
+        <OneChoice
+          valueHeader='Add-on'
+          valueChild='sticky rice'
+          setInput={props.setInput}
+          setClick={props.setClick}
+          click={props.click}
+        ></OneChoice>
+      </div>
+
+      <div class='confirm-button'>
+        <ConfirmButton
+          value='confirm'
+          setInput={props.setInput}
+          setClick={props.setClick}
+          click={props.click}
+        ></ConfirmButton>
+      </div>{}
+
+      <div class='reselect-button'>
+        <ReselectButton
+          value='reset'
+          setInput={props.setInput}
+          setClick={props.setClick}
+          click={props.click}
+        ></ReselectButton>
+      </div>
+    </div>
   );
 }
 
