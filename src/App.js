@@ -15,6 +15,7 @@ function App() {
   const [tape, setTape] = useState("");
   const { key, forceUpdate } = useForceUpdate();
 
+  // eslint-disable-next-line
   const [Modal, open, close, isOpen] = useModal("root", {
     preventScroll: true,
   });

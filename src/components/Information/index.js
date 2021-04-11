@@ -1,9 +1,9 @@
-import React, { useState, useCallback } from "react";
-import { render } from "react-dom";
+import React from "react";
 import useModal from "react-hooks-use-modal";
 import "./information.css";
 
 const Information = () => {
+  // eslint-disable-next-line
   const [Modal, open, close, isOpen] = useModal("root", {
     preventScroll: true,
   });
